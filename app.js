@@ -1,5 +1,24 @@
-var app = angular.module ('myapp',[]);
+var app = angular.module('myApp', []);
 
-app.controller('MyController',function($scope){
-    $scope.name="mahi";
+//parent controller
+
+app.controller('CollegeController', function($scope) {
+    $scope.collegeName = "abc college";
 });
+
+//child controller
+
+app.controller(
+    "StudentController", function($scope) {
+        $scope.name = "john";
+        $scope.department = "Computer Science";
+        $scope.semester = 3;
+
+        //aray
+        $scope.students =[
+            "Mahalakshmi",
+            "Manvitha",
+            "Neelashree",
+        ];
+    }
+);
